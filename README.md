@@ -1,24 +1,26 @@
-Joints:
-Base joint
-Shoulder joint
-Shoulder twist joint
-Elbow joint
-Arm Twist Joint
-Wrist joint
-Grip joint
+Joints
+1 Base joint
+2 Shoulder joint
+3 Shoulder twist joint
+4 Elbow joint
+5 Arm Twist Joint
+6 Wrist joint
+7 Grip joint
 
 DH Parameters of Armeo Power:
 joint a          d          alpha      offset
-1    -0.0000    -0.0001     1.5703    -0.0016
-2    -0.0008    -0.0027     1.5677     0.0018
-3    -0.0004     0.2522     1.5634    -3.1419
-4     0.0003     0.0011    -1.5665    -0.0007
-5    -0.0000     0.2487     1.5641     0.0041
-6     0.0604    -0.1167     3.6046     2.3425
-7    -0.0001    -0.1311     4.1266     0.5968
+1     -0.0000,   0.0000,     1.5708,   -0.0000
+2      0.0000,   0.0000,    -1.5708,    3.1416
+3     -0.0000,   0.2490,     1.5708,   -0.0000
+4     -0.0000,  -0.0000,    -1.5708,   -0.0000
+5      0.0000,   0.2520,     1.5708,    0.0000
+6      0.0840,  -0.0000,     0.0000,    1.5708
 
-After plugging these dh parameters back in, fkine was performed and the resultant end effector position was compared to the real position
-The error was: avg: 0.0012018069427291887, min: 1.91432e-05, max: 0.00445708
+Note that:
+- Joint 6 alpha was unable to be determined due to the model not giving end effector rotation, and as such has been locked to 0.0
+- Joint 7 (grip joint) does not contribute to end effector
+- These were generated using a least squares optimizer using the joint angles, end effector position and jacobian as inputs. (see armeo_examples/tools/dh_estimator.py)
+- These dh parameters result in a euclidean distance error of: `avg: 5.37e-06, min: 2.15e-06, max: 5.04e-04` Tested on the samples in `data/dh_param_est_error_improved.csv`
 
 ## Related Repositories
 
