@@ -2,7 +2,7 @@
 
 ## Intro
 
-## Further Info
+## Documentation
 
 | Document | Description |
 |----------|-------------|
