@@ -1,26 +1,24 @@
-Joints
-1 Base joint
-2 Shoulder joint
-3 Shoulder twist joint
-4 Elbow joint
-5 Arm Twist Joint
-6 Wrist joint
-7 Grip joint
+# Armeo Docs
 
-DH Parameters of Armeo Power:
-joint a          d          alpha      offset
-1     -0.0000,   0.0000,     1.5708,   -0.0000
-2      0.0000,   0.0000,    -1.5708,    3.1416
-3     -0.0000,   0.2490,     1.5708,   -0.0000
-4     -0.0000,  -0.0000,    -1.5708,   -0.0000
-5      0.0000,   0.2520,     1.5708,    0.0000
-6      0.0840,  -0.0000,     0.0000,    1.5708
+## Intro
 
-Note that:
-- Joint 6 alpha was unable to be determined due to the model not giving end effector rotation, and as such has been locked to 0.0
-- Joint 7 (grip joint) does not contribute to end effector
-- These were generated using a least squares optimizer using the joint angles, end effector position and jacobian as inputs. (see armeo_examples/tools/dh_estimator.py)
-- These dh parameters result in a euclidean distance error of: `avg: 5.37e-06, min: 2.15e-06, max: 5.04e-04` Tested on the samples in `data/dh_param_est_error_improved.csv`
+## Further Info
+
+| Document | Description |
+|----------|-------------|
+|[Armeo Power Info](/docs/armeo_power_info.md) | General information about the armeo power including dh parameters, joints, joint limits |
+|[xPC Target Protocol](/docs/xpc_protocol.md) | Information about the xpcapi network protocol used to communicate with the xPC Target PC that controls the Armeo |
+|[xPC API Intro](/docs/xpc_api.md) | Introduction to how to use xpcapi to communicate with an xPC Target PC |
+|[Armeo Control](/docs/armeo_control.md) | Information on how to control the Armeo Power using xPC API |
+|[Armeo Ros Driver](/docs/armeo_ros_driver.md) | Information on how to use the Armeo Ros driver |
+
+## Design Decisions and Process
+
+|Document | Description |
+|---------|-------------|
+|
+
+
 
 ## Related Repositories
 
