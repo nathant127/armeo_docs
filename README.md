@@ -1,26 +1,35 @@
-Joints
-1 Base joint
-2 Shoulder joint
-3 Shoulder twist joint
-4 Elbow joint
-5 Arm Twist Joint
-6 Wrist joint
-7 Grip joint
+# Armeo Docs
 
-DH Parameters of Armeo Power:
-joint a          d          alpha      offset
-1     -0.0000,   0.0000,     1.5708,   -0.0000
-2      0.0000,   0.0000,    -1.5708,    3.1416
-3     -0.0000,   0.2490,     1.5708,   -0.0000
-4     -0.0000,  -0.0000,    -1.5708,   -0.0000
-5      0.0000,   0.2520,     1.5708,    0.0000
-6      0.0840,  -0.0000,     0.0000,    1.5708
+## Intro
 
-Note that:
-- Joint 6 alpha was unable to be determined due to the model not giving end effector rotation, and as such has been locked to 0.0
-- Joint 7 (grip joint) does not contribute to end effector
-- These were generated using a least squares optimizer using the joint angles, end effector position and jacobian as inputs. (see armeo_examples/tools/dh_estimator.py)
-- These dh parameters result in a euclidean distance error of: `avg: 5.37e-06, min: 2.15e-06, max: 5.04e-04` Tested on the samples in `data/dh_param_est_error_improved.csv`
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+|[Armeo Power Info](/docs/armeo_power_info.md) | General information about the armeo power including dh parameters, joints, joint limits (Start here if new) |
+|[xPC API Intro](/docs/xpc_api.md) | Introduction to how to use xpcapi to communicate with an xPC Target PC |
+|[xPC Target Protocol](/docs/xpc_protocol.md) | Information about the xpcapi network protocol used to communicate with the xPC Target PC that controls the Armeo |
+|[Armeo Control](/docs/armeo_control.md) | Information on how to control the Armeo Power using xPC API |
+|[Armeo Signals](/data/armeo_signals.csv) | Full list of all signals in the Armeo Power Model |
+|[Armeo Parameters](/data/armeo_parameters.csv) | Full list of all parameters in the Armeo Power Model |
+
+## Design Decisions and Process
+
+|Document | Description |
+|---------|-------------|
+|
+
+## Avenues of Further Investigation
+
+There are a number of areas that I have not had time to investigate, but could lead to improvements to how the Armeo is controlled and built
+
+| Name | Description |
+|------|-------------|
+|Compile new Model | The .dlm that comes with the Armeo Power has a number of limitations that prevent us from ideal control, forcing us to use workarounds. If the .dlm could be loaded back into MATLAB and/or it could be modified, it could provide access to new, easier and more direct ways of controlling the Armeo, such as velocity control, end effector based control, reporting the end effector orientation and more |
+| Other Operation Modes | Not all operation modes were explored, the explored operation modes can be seen in [Armeo Power Info](/docs/armeo_power_info.md), some seem interesting, such as the Haptic Planes mode and the User Trajectory mode |
+| xPC API Extensions | Not all api functions were implemented as part of xpctarget_api_cpp, some, such as filesystem and scope functions were left unimplemented, and the error handling system was also left unimplemented in favor of c++ exceptions |
+
+
 
 ## Related Repositories
 
