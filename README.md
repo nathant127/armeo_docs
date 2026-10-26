@@ -13,12 +13,6 @@
 |[Armeo Signals](/data/armeo_signals.csv) | Full list of all signals in the Armeo Power Model |
 |[Armeo Parameters](/data/armeo_parameters.csv) | Full list of all parameters in the Armeo Power Model |
 
-## Design Decisions and Process
-
-|Document | Description |
-|---------|-------------|
-|
-
 ## Avenues of Further Investigation
 
 There are a number of areas that I have not had time to investigate, but could lead to improvements to how the Armeo is controlled and built
@@ -39,7 +33,7 @@ There are a number of areas that I have not had time to investigate, but could l
 | [armeo_ros_driver](https://github.com/nathant127/armeo_ros_driver) | ROS 2 driver for the ARMEO Power robot |
 | [armeo_msgs](https://github.com/nathant127/armeo_msgs) | A set of msgs for the armeo ros driver |
 | [armeo_examples](https://github.com/nathant127/armeo_examples) | A simple set of examples for controlling the ARMEO Power robot |
-| [armeo_re](https://github.com/ashquarky/armeo-re) | Repository that this project is based on, documentation |
+| [armeo_re](https://github.com/ashquarky/armeo-re) | Repository that this project is based on, documentation, has more information about Armeo Power hardware |
 | [armeo_xpc](https://github.com/ashquarky/armeo_xpc) | Repository that this project is based on, retrieves signals from the armeo power using ros2 on windows |
 
 ### Testing / Legacy
