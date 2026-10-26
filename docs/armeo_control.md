@@ -74,7 +74,7 @@ inline void SP(int port, int idx, double val) {
 
 // Helper for checking estop state
 inline bool is_estop_pressed(int port) {
-    return ((uint32_t)GS(port, 696)) & (1 << STATUS_ESTOP_BIT);
+    return ((uint32_t)xPCGetSignal(port, 696)) & (1 << STATUS_ESTOP_BIT);
 }
 
 int startupSeq(int port) {
