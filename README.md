@@ -1,6 +1,40 @@
 # Armeo Docs
 
-## Intro
+This Repository is the documentation for a UTS Robotics Institute Project.
+
+The Project's goal is to create a system to control the [Armeo Power Robotic Exoskeleton](https://www.hocoma.com/us/solutions/armeo-power/) through a native linux, ROS2 interface. 
+This is to allow future research to be performed using the Armeo Power.
+
+
+
+## What is the Armeo Power?
+
+The Armeo Power is a 6 Degree of Freedom, upper limb robotic exokseleton made by Hocoma to perform therapy on patients with severe to moderate impairments. 
+It comes with user control software that allows a degree of control, however this software does not allow full control of the Armeo Power exoskeleton that would be needed for more interesting research.
+
+The Armeo Power is controlled via xPC Target, a system created by Mathworks as part of MATLAB to create and deploy real time models on a xPC Target PC. 
+The control software communicates with the Armeo's Target PC through the xPC API.
+
+Below you can see two images of the Armeo Power
+![Armeo Side View](media/Armeo1.jpg)
+*Side view of ArmeoPower exoskeleton, with base unit cover removed. (Image from [armeo_re](https://github.com/ashquarky/armeo-re))*
+![Armeo Front View](media/Armeo2.png)
+*Detail of the forearm part of the exoskeleton itself, joints 3 onwards. (Image from [armeo_re](https://github.com/ashquarky/armeo-re))*
+## Setup
+
+This project controls the Armeo directly by replacing the Armeo Control Software, communicating directly with the xPC Target PC over ethernet.
+
+Typically to communicate with a xPC Target PC you would use either MATLAB directly, or the provided C library "xpcapi.dll". 
+However MATLAB would not be compattible with ROS2 and the C library is only built for windows, therefore to achieve native linux compatibility [xpctarget_api_cpp](https://github.com/nathant127/xpctarget_api_cpp) was built as a replacement to the C library.
+This was built by examining "xpcapi.dll" specifically the relationship between the API Calls, and the Network Packets that were sent as a result, and then designing a system that does the same.
+
+This library was then used to create a native ROS2 driver for the Armeo.
+
+Below is a diagram that shows each part of the system that allows the Armeo Power to be controlled.
+![Setup Diagram](media/SystemDiagram.png)
+
+![Armeo Target PC](media/TargetPC.png)
+*The Armeo Target PC, Note the ethernet cable that is used to communicate with the Target PC (Image from [armeo_xpc](https://github.com/ashquarky/armeo_xpc))*
 
 ## Documentation
 
