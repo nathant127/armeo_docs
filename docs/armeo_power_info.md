@@ -1,18 +1,19 @@
 # Joints
 
-|Joint No | Joint Name | Joint Type | Q Min | Q Max |
-|---------|------------|------------|-------|-------|
-|1 | Base joint | Revolute          |
-|2 | Shoulder joint | Revolute      |
-|3 | Shoulder twist joint | Revolute|
-|4 | Elbow joint | Revolute         |
-|5 | Arm Twist Joint | Revolute     |
-|6 | Wrist joint | Revolute         |
-|7 | Grip joint | Revolute          |
+|Joint No | Joint Name | Joint Type | Q Min (Right) | Q Max (Right) | Q Min (Left) | Q Max (Left) |
+|---------|------------|------------|---------------|---------------|--------------|--------------|
+|1 | Base joint | Revolute          | -1.363 |  0.705 | -3.830 | -1.767 |
+|2 | Shoulder joint | Revolute      |  0.685 |  2.081 | -0.745 | -2.140 |
+|3 | Shoulder twist joint | Revolute|  0.000 | -1.546 | -3.140 | -1.603 |
+|4 | Elbow joint | Revolute         |  0.000 |  1.770 |  0.000 |  1.770 |
+|5 | Arm Twist Joint | Revolute     | -2.850 | -0.551 | -2.850 | -0.551 |
+|6 | Wrist joint | Revolute         | -1.085 |  1.057 | -1.085 |  1.057 |
+|7 | Grip joint | Revolute          | -0.261 |  0.805 | -0.261 |  0.805 |
 
 Note
 - The joint names were made up according to what kind of arm movement they corespond to
 - The Grip joint is optional, and does not contribute to the end effector or jacobian
+- The Q Limits depend on how the Armeo is set up, it can be set up for either Right or Left Arms. The idea is there are 3 physical switches that if held allow their respective joint to move beyond their typical limits allowing the Armeo to be changed between a Right hand and Left hand configuration.
 
 # DH Parameters
 
