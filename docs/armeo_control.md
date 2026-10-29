@@ -15,7 +15,7 @@ The signals and parameters are listed:
 
 Once the model is loaded and started, you must go through the initialization proceedure in order to allow the Armeo to move. This initialization proceedure was built by running the provided offical armeo control software, using wireshark to analyze what parameters and signals were read/written to. As such some parts of the initialization proceedure may be unnecessary and it is not fully understood what exactly this proceedure is doing.
 
-Please note that the initialization proceedure is NOT REQUIRED if you only want to read state, ie joint states, jacobian, end effector position etc. This initialization proceedure is only required to operate the motors.
+Please note that the initialization proceedure is NOT REQUIRED to read state, ie joint states, jacobian, end effector position etc. HOWEVER you it does seem to improve the accuracy of the state when performed.
 
 Below is a functional example extracted from [Armeo Examples xpcdef.hpp](https://github.com/nathant127/armeo_examples/blob/main/include/xpcdef.hpp) and then slightly modified for this document
 
