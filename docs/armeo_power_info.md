@@ -4,7 +4,7 @@
 |---------|------------|------------|---------------|---------------|--------------|--------------|
 |1 | Base joint | Revolute          | -1.363 |  0.705 | -3.830 | -1.767 |
 |2 | Shoulder joint | Revolute      |  0.685 |  2.081 | -0.745 | -2.140 |
-|3 | Shoulder twist joint | Revolute|  0.000 | -1.546 | -3.140 | -1.603 |
+|3 | Shoulder twist joint | Revolute| -1.546 |  0.000 | -3.140 | -1.603 |
 |4 | Elbow joint | Revolute         |  0.000 |  1.770 |  0.000 |  1.770 |
 |5 | Arm Twist Joint | Revolute     | -2.850 | -0.551 | -2.850 | -0.551 |
 |6 | Wrist joint | Revolute         | -1.085 |  1.057 | -1.085 |  1.057 |
